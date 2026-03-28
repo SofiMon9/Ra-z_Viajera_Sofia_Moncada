@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Raíz Viajera — Donde cada viaje tiene origen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-brand" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+  <ul class="navbar-links">
+    <li><a onclick="navigateTo('home')" id="nav-home" class="active">Inicio</a></li>
+    <li><a onclick="navigateTo('experiences')">Experiencias</a></li>
+    <li><a onclick="navigateTo('packages')" id="nav-packages">Paquetes</a></li>
+    <li><a onclick="navigateTo('quote')" id="nav-quote">Cotizar</a></li>
+    <li><a onclick="navigateTo('contact')" id="nav-contact">Contacto</a></li>
+  </ul>
+  <div class="navbar-cta">
+    <button class="btn btn-primary" onclick="navigateTo('quote')">Empezar Travesía</button>
+  </div>
+  <div class="burger" id="burger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="page" id="page-quote">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-text">
+          <div class="hero-badge">Cotización Transparente</div>
+          <h1 class="page-hero-headline">El costo de la<br><em>Autenticidad,</em><br>calculado.</h1>
+          <p class="page-hero-sub">Creemos que la transparencia es el primer paso hacia el turismo sostenible. Nuestra calculadora te ayuda a planear tu inmersión en el patrimonio oculto de Colombia. Sin tarifas escondidas.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+            <div style="display:flex;align-items:flex-start;gap:.75rem;">
+              <div style="width:36px;height:36px;background:var(--secondary-container);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;">💰</div>
+              <div><div style="font-family:var(--font-display);font-size:.9rem;font-weight:600;color:var(--on-surface);margin-bottom:.2rem;">Impacto Directo</div><div style="font-size:.82rem;color:var(--on-surface-muted);line-height:1.5;">Tu cotización refleja directamente los salarios justos pagados a guías locales e indígenas.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;">
+              <div style="width:36px;height:36px;background:var(--secondary-container);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;">🌿</div>
+              <div><div style="font-family:var(--font-display);font-size:.9rem;font-weight:600;color:var(--on-surface);margin-bottom:.2rem;">Logística Sostenible</div><div style="font-size:.82rem;color:var(--on-surface-muted);line-height:1.5;">Calculamos las rutas más eficientes para minimizar la huella de carbono maximizando la experiencia.</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="page-hero-img">
+          <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <rect width="500" height="440" fill="#14462a"/>
+            <ellipse cx="80" cy="220" rx="75" ry="240" fill="#1e6b3a" opacity=".6"/>
+            <ellipse cx="170" cy="200" rx="65" ry="250" fill="#246040" opacity=".7"/>
+            <ellipse cx="300" cy="210" rx="90" ry="240" fill="#1a5530" opacity=".8"/>
+            <ellipse cx="440" cy="205" rx="80" ry="240" fill="#206035" opacity=".7"/>
+            <polygon points="230,0 260,0 268,440 222,440" fill="rgba(50,180,120,0.25)"/>
+            <rect x="0" y="390" width="500" height="50" fill="#0a2415"/>
+            <circle cx="250" cy="80" r="55" fill="rgba(180,240,200,0.1)"/>
+            <div style="position:absolute;bottom:1.5rem;left:1.5rem;background:white;border-radius:12px;padding:.75rem 1.25rem;">
+              <div style="font-size:1.5rem;font-weight:800;color:#6b4226;">100%</div>
+              <div style="font-size:.7rem;color:#6b6355;">LOCAL PARTNERSHIPS</div>
+            </div>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-grid">
+        <div class="quote-form-wrap reveal">
+          <div class="quote-step-label">
+            <div class="quote-step-num">1</div>
+            <div class="quote-step-title">Define tu Travesía</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Territorio</label>
+            <select class="form-select" id="q-territory" onchange="calcQuote()">
+              <option value="300000">Eje Cafetero ($300k/día)</option>
+              <option value="350000">Caribe ($350k/día)</option>
+              <option value="380000">Andes ($380k/día)</option>
+              <option value="420000">Amazonía ($420k/día)</option>
+              <option value="400000">Pacífico ($400k/día)</option>
+              <option value="270000">Llanos ($270k/día)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Duración (días)</label>
+              <input class="form-input" type="number" id="q-days" value="3" min="1" max="30" oninput="calcQuote()"/>
+            </div>
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Viajeros</label>
+              <div class="counter-input">
+                <button class="counter-btn" onclick="adjCount(-1)">−</button>
+                <span class="counter-val" id="q-count-display">2</span>
+                <button class="counter-btn" onclick="adjCount(1)">+</button>
+                <input type="hidden" id="q-travelers" value="2"/>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem">
+            <label class="form-label">Nivel de Experiencia</label>
+            <div class="level-toggle">
+              <button class="level-btn active" id="lvl-essential" onclick="setLevel('essential')">Esencial</button>
+              <button class="level-btn" id="lvl-immersive" onclick="setLevel('immersive')">Inmersivo</button>
+            </div>
+          </div>
+          <button class="btn btn-primary calc-btn" onclick="calcQuote()">Calcular Mi Travesía ✦</button>
+        </div>
+
+        <!-- Quote result panel -->
+        <div class="quote-result reveal" style="transition-delay:.15s">
+          <div class="quote-result-label">Cotización Estimada</div>
+          <div class="quote-line">
+            <span class="quote-line-label">Base diaria</span>
+            <span class="quote-line-value" id="r-daily">$300,000</span>
+          </div>
+          <div class="quote-line">
+            <span class="quote-line-label">Descuento grupal</span>
+            <span class="quote-line-value discount" id="r-discount">0%</span>
+          </div>
+          <div class="quote-line">
+            <span class="quote-line-label">Nivel experiencia</span>
+            <span class="quote-line-value" id="r-level">Esencial</span>
+          </div>
+          <div class="quote-line">
+            <span class="quote-line-label">Fee patrimonio</span>
+            <span class="quote-line-value" id="r-heritage">$45,000</span>
+          </div>
+          <div class="quote-total">
+            <div class="quote-total-label">Inversión Total Estimada</div>
+            <div class="quote-total-value" id="r-total">$2,025,000</div>
+            <div class="quote-total-unit">COP · Por persona</div>
+          </div>
+          <div class="quote-disclaimer">*Estimaciones excluyen tiquetes aéreos. Cotización final sujeta a disponibilidad estacional.</div>
+          <button class="btn btn-primary speak-btn" onclick="navigateTo('contact')">Hablar con un Curador →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-transparent">
+    <div class="container">
+      <div class="why-t-grid">
+        <div class="why-t-text reveal">
+          <h2>Cómo resolvemos el problema del "Tourist Trap".</h2>
+          <p>Muchas agencias ofrecen precios fijos que no reflejan la realidad de la logística territorial. Usamos un modelo de precios orgánico que se adapta al tamaño de tu grupo y las necesidades específicas de cada ecosistema.</p>
+          <p>Esto garantiza que tu dinero llegue exactamente donde debe: a las personas que preservan la tierra.</p>
+          <div class="trust-badges">
+            <div class="trust-badge"><span>✓</span> Sin Comisiones Ocultas</div>
+            <div class="trust-badge"><span>✓</span> Anfitriones Verificados</div>
+            <div class="trust-badge"><span>✓</span> Precios Justos</div>
+          </div>
+        </div>
+        <div class="why-t-cta reveal" style="transition-delay:.15s">
+          <div style="font-size:1.5rem;margin-bottom:.5rem;">📋</div>
+          <h3>¿Listo para explorar?</h3>
+          <p>Conecta con nuestros curadores para un itinerario personalizado basado en tu cálculo.</p>
+          <button class="btn btn-white" onclick="navigateTo('contact')">Hablar con un Curador</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+        <ul class="footer-nav">
+          <li><a onclick="navigateTo('home')">Inicio</a></li>
+          <li><a onclick="navigateTo('packages')">Paquetes</a></li>
+          <li><a onclick="navigateTo('quote')">Cotizar</a></li>
+          <li><a onclick="navigateTo('contact')">Contacto</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">𝕏</a>
+          <a href="#" class="social-btn">in</a>
+          <a href="#" class="social-btn">📷</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Raíz Viajera — Cultivando puentes, preservando heritage.</span>
+        <span>Turismo sostenible · FAQ</span>
+      </div>
+    </div>
+  </footer>
+</div>
