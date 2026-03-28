@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Raíz Viajera — Donde cada viaje tiene origen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-brand" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+  <ul class="navbar-links">
+    <li><a onclick="navigateTo('home')" id="nav-home" class="active">Inicio</a></li>
+    <li><a onclick="navigateTo('experiences')">Experiencias</a></li>
+    <li><a onclick="navigateTo('packages')" id="nav-packages">Paquetes</a></li>
+    <li><a onclick="navigateTo('quote')" id="nav-quote">Cotizar</a></li>
+    <li><a onclick="navigateTo('contact')" id="nav-contact">Contacto</a></li>
+  </ul>
+  <div class="navbar-cta">
+    <button class="btn btn-primary" onclick="navigateTo('quote')">Empezar Travesía</button>
+  </div>
+  <div class="burger" id="burger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="page" id="page-contact">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-text">
+          <div class="hero-badge">Conecta con Nosotros</div>
+          <h1 class="page-hero-headline">Comencemos<br>tu próxima<br><em>historia.</em></h1>
+          <p class="page-hero-sub">Ya sea que busques sabiduría ancestral, paisajes ocultos o una inmersión cultural personalizada, nuestros curadores están aquí para guiar tus raíces hacia nuevos horizontes.</p>
+          <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:.75rem;background:var(--surface-container);padding:.85rem 1.25rem;border-radius:var(--radius-lg);">
+              <span style="font-size:1.1rem;">📧</span>
+              <div>
+                <div style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--on-surface-muted);">Email</div>
+                <div style="font-size:.9rem;color:var(--secondary);font-weight:600;">hola@raizviajera.travel</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem;background:var(--surface-container);padding:.85rem 1.25rem;border-radius:var(--radius-lg);">
+              <span style="font-size:1.1rem;">📞</span>
+              <div>
+                <div style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--on-surface-muted);">Llamar</div>
+                <div style="font-size:.9rem;color:var(--secondary);font-weight:600;">+57 (1) 800-RAIZ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-hero-img">
+          <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs><linearGradient id="ctc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4956b"/><stop offset="100%" stop-color="#8c6040"/></linearGradient></defs>
+            <rect width="500" height="440" fill="url(#ctc)"/>
+            <ellipse cx="250" cy="300" rx="350" ry="160" fill="#6b4226" opacity=".4"/>
+            <rect x="80" y="240" width="340" height="200" rx="20" fill="rgba(107,66,38,0.3)"/>
+            <rect x="140" y="200" width="220" height="240" rx="16" fill="rgba(107,66,38,0.25)"/>
+            <rect x="200" y="170" width="100" height="270" rx="12" fill="rgba(107,66,38,0.2)"/>
+            <ellipse cx="250" cy="80" rx="50" ry="50" fill="rgba(255,240,200,0.15)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-wrap reveal">
+          <h2>Envía un Mensaje</h2>
+          <div class="form-row">
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Tu nombre</label>
+              <input class="form-input" type="text" placeholder="Juan Pérez"/>
+            </div>
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Correo electrónico</label>
+              <input class="form-input" type="email" placeholder="juan@example.com"/>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem">
+            <label class="form-label">Experiencia de interés</label>
+            <select class="form-select">
+              <option>Ruta Cafetera — Quindío</option>
+              <option>Caribe Colonial — Cartagena</option>
+              <option>Cumbre Andina</option>
+              <option>Selva Amazónica — Tikuna</option>
+              <option>Pacífico Biodiverso</option>
+              <option>Llanos Salvajes</option>
+              <option>Itinerario personalizado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">¿En qué podemos ayudarte?</label>
+            <textarea class="form-textarea" placeholder="Cuéntanos sobre tus sueños de viaje..."></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%" onclick="submitContact()">Enviar Consulta →</button>
+          <div id="contact-success" style="display:none;margin-top:1rem;background:var(--surface-container);border-radius:var(--radius-md);padding:1rem;text-align:center;color:var(--primary);font-weight:600;">¡Mensaje enviado! Te contactaremos en menos de 24 horas. 🌿</div>
+        </div>
+
+        <div class="contact-sidebar">
+          <div class="contact-info-card reveal" style="transition-delay:.1s">
+            <div class="contact-info-title"><span>📍</span> Sede Central</div>
+            <div class="contact-info-item">
+              <div class="contact-info-value">Calle de la Memoria 42</div>
+              <div class="contact-info-value">Bogotá, Colombia</div>
+            </div>
+            <a href="#" class="contact-info-link" style="font-size:.85rem;display:flex;align-items:center;gap:.4rem;">Ver en Mapa →</a>
+          </div>
+
+          <div class="community-card reveal" style="transition-delay:.15s">
+            <h3>Únete a la comunidad</h3>
+            <p>Sigue nuestro camino mientras documentamos y preservamos el patrimonio vivo de nuestros destinos.</p>
+            <div class="social-icons">
+              <div class="social-icon-btn">𝕏</div>
+              <div class="social-icon-btn">🌐</div>
+              <div class="social-icon-btn">📷</div>
+            </div>
+            <div class="support-hours">
+              <div class="support-hours-label">Horario de atención</div>
+              <div class="support-hours-value">Lun – Vie: 9am – 6pm (COT)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="faq-strip">
+    <div class="container">
+      <div class="faq-strip-inner reveal">
+        <div class="faq-strip-text">
+          <div class="faq-strip-icon">❓</div>
+          <span class="faq-strip-label">¿Buscas respuestas rápidas sobre turismo sostenible?</span>
+        </div>
+        <button class="btn btn-primary">Visitar nuestro FAQ</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+        <ul class="footer-nav">
+          <li><a onclick="navigateTo('home')">Inicio</a></li>
+          <li><a onclick="navigateTo('packages')">Paquetes</a></li>
+          <li><a onclick="navigateTo('quote')">Cotizar</a></li>
+          <li><a onclick="navigateTo('contact')">Contacto</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">𝕏</a>
+          <a href="#" class="social-btn">in</a>
+          <a href="#" class="social-btn">📷</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Raíz Viajera — Cultivando puentes, preservando heritage.</span>
+        <span>Política de privacidad · Turismo sostenible</span>
+      </div>
+    </div>
+  </footer>
+</div>
