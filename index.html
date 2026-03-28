@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Raíz Viajera — Donde cada viaje tiene origen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-brand" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+  <ul class="navbar-links">
+    <li><a onclick="navigateTo('home')" id="nav-home" class="active">Inicio</a></li>
+    <li><a onclick="navigateTo('experiences')" href="servicios.html">servicios</a></li>
+    <li><a onclick="navigateTo('packages')" id="nav-packages" href="servicios.html">Paquetes</a></li>
+    <li><a onclick="navigateTo('cotizacion')" id="nav-quote" href="cotizacion.html">Cotizar</a></li>
+    <li><a onclick="navigateTo('contact')" id="nav-contact">Contacto</a></li>
+  </ul>
+  <div class="navbar-cta">
+    <button href="co" class="btn btn-primary" onclick="navigateTo('quote')">Empezar Travesía</button>
+  </div>
+  <div class="burger" id="burger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HOME PAGE
+============================================================ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge animate-in delay-1">Turismo con Alma</div>
+          <h1 class="hero-headline animate-in delay-2">Donde cada<br>viaje tiene <em>origen</em></h1>
+          <p class="hero-sub animate-in delay-3">Explora la herencia cultural y la biodiversidad de Colombia a través de rutas curadas por expertos locales. Redescubre tu raíz en cada destino.</p>
+          <div class="hero-actions animate-in delay-4">
+            <button class="btn btn-primary" onclick="navigateTo('cotización')">Empezar Travesía</button>
+            <button class="btn btn-ghost" onclick="navigateTo('servicios')">Ver Destinos</button>
+          </div>
+          <div class="hero-stats animate-in delay-5">
+            <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">Regiones únicas</div></div>
+            <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Viajes curados</div></div>
+            <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">Satisfacción</div></div>
+          </div>
+        </div>
+        <div class="hero-visual animate-in delay-3">
+          <div class="hero-img-wrap">
+            <svg viewBox="0 0 560 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6b8f5c"/><stop offset="40%" stop-color="#8aaa6e"/><stop offset="100%" stop-color="#c4a96b"/></linearGradient>
+                <linearGradient id="path" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a96a"/><stop offset="100%" stop-color="#8a6f3c"/></linearGradient>
+              </defs>
+              <rect width="560" height="520" fill="url(#sky)"/>
+              <ellipse cx="280" cy="320" rx="400" ry="200" fill="#4a6b3a" opacity=".6"/>
+              <ellipse cx="100" cy="350" rx="250" ry="160" fill="#3d5830" opacity=".8"/>
+              <ellipse cx="450" cy="360" rx="220" ry="150" fill="#3d5830" opacity=".7"/>
+              <g opacity=".9">
+                <rect x="80" y="360" width="400" height="12" rx="6" fill="#2d4520"/>
+                <rect x="90" y="380" width="380" height="10" rx="5" fill="#365229"/>
+                <rect x="100" y="397" width="360" height="10" rx="5" fill="#3d5d2f"/>
+                <rect x="110" y="413" width="340" height="10" rx="5" fill="#456630"/>
+                <rect x="120" y="428" width="320" height="10" rx="5" fill="#4d6f33"/>
+                <rect x="60" y="443" width="440" height="12" rx="6" fill="#557838"/>
+                <rect x="40" y="460" width="480" height="14" rx="7" fill="#5d803d"/>
+                <rect x="20" y="477" width="520" height="16" rx="8" fill="#648843"/>
+                <rect x="0" y="495" width="560" height="25" rx="0" fill="#6a9048"/>
+              </g>
+              <polygon points="240,270 320,270 340,520 220,520" fill="url(#path)" opacity=".85"/>
+              <polygon points="268,300 292,300 295,520 265,520" fill="rgba(255,220,120,0.25)"/>
+              <ellipse cx="280" cy="310" rx="320" ry="40" fill="rgba(255,248,220,0.12)"/>
+              <circle cx="280" cy="80" r="50" fill="rgba(255,240,180,0.18)"/>
+              <circle cx="280" cy="80" r="28" fill="rgba(255,240,160,0.2)"/>
+            </svg>
+          </div>
+          <div class="hero-quote">
+            <blockquote>"La tierra nos llama de vuelta."</blockquote>
+            <cite>— Guía local, Quindío</cite>
+          </div>
+          <div class="hero-tag">🌿 Rutas Auténticas</div>
+          <div class="dots-deco"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experiences" id="experiencias">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-label">Curaduría de Rutas</p>
+          <h2 class="section-title">Experiencias Raíz</h2>
+          <p class="section-sub">Rutas que celebran la identidad de nuestros territorios</p>
+        </div>
+        <span class="link-arrow" onclick="navigateTo('servicios')">Explorar todas →</span>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card exp-cafetera reveal" onclick="navigateTo('servicios')">
+          <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
+            <defs><linearGradient id="caf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d2510"/><stop offset="100%" stop-color="#6b4226"/></linearGradient></defs>
+            <rect width="560" height="320" fill="url(#caf)"/>
+            <ellipse cx="280" cy="200" rx="350" ry="160" fill="#2d4520" opacity=".7"/>
+            <ellipse cx="100" cy="240" rx="200" ry="100" fill="#1e3012" opacity=".8"/>
+            <ellipse cx="460" cy="250" rx="180" ry="90" fill="#1e3012" opacity=".7"/>
+            <rect x="60" y="230" width="440" height="8" rx="4" fill="#2d4520"/>
+            <rect x="40" y="248" width="480" height="10" rx="5" fill="#365229"/>
+            <rect x="20" y="268" width="520" height="12" rx="6" fill="#3d5d2f"/>
+            <rect x="0" y="288" width="560" height="32" rx="0" fill="#456630"/>
+            <circle cx="420" cy="80" r="40" fill="rgba(255,200,100,0.15)"/>
+            <circle cx="420" cy="80" r="20" fill="rgba(255,200,80,0.2)"/>
+          </svg>
+          <div class="exp-card-body">
+            <span class="exp-tag">Eje Cafetero</span>
+            <div class="exp-name">Ruta Cafetera</div>
+            <div class="exp-desc">Sumérgete en el aroma de las montañas del Quindío y Risaralda.</div>
+          </div>
+        </div>
+        <div class="exp-card exp-andina reveal" style="transition-delay:.1s" onclick="navigateTo('packages')">
+          <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
+            <defs><linearGradient id="and" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a2d1a"/><stop offset="100%" stop-color="#2d4520"/></linearGradient></defs>
+            <rect width="560" height="320" fill="url(#and)"/>
+            <polygon points="0,240 120,100 200,180 280,60 360,150 440,80 560,200 560,320 0,320" fill="#243d1a" opacity=".9"/>
+            <polygon points="0,280 80,200 150,260 230,140 310,200 390,120 470,180 560,240 560,320 0,320" fill="#1a2e12" opacity=".8"/>
+            <rect x="0" y="280" width="560" height="40" rx="0" fill="#0f1e0a"/>
+            <circle cx="280" cy="60" r="30" fill="rgba(200,220,255,0.2)"/>
+          </svg>
+          <div class="exp-card-body">
+            <span class="exp-tag">Andes</span>
+            <div class="exp-name">Cumbre Andina</div>
+            <div class="exp-desc">Historia y páramos de valles profundos con ecosistemas únicos.</div>
+          </div>
+        </div>
+        <div class="exp-card exp-caribe reveal" style="transition-delay:.15s" onclick="navigateTo('packages')">
+          <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
+            <defs>
+              <linearGradient id="car" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d4a6b"/><stop offset="100%" stop-color="#1a6e8a"/></linearGradient>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a6e8a"/><stop offset="100%" stop-color="#0a3d5c"/></linearGradient>
+            </defs>
+            <rect width="560" height="320" fill="url(#car)"/>
+            <rect x="0" y="200" width="560" height="120" fill="url(#sea)"/>
+            <ellipse cx="180" cy="200" rx="180" ry="60" fill="#d4a060" opacity=".9"/>
+            <ellipse cx="400" cy="210" rx="140" ry="45" fill="#c49050" opacity=".8"/>
+            <circle cx="280" cy="90" r="50" fill="rgba(255,220,100,0.25)"/>
+            <circle cx="280" cy="90" r="28" fill="rgba(255,220,80,0.3)"/>
+          </svg>
+          <div class="exp-card-body">
+            <span class="exp-tag">Caribe</span>
+            <div class="exp-name">Brisas del Caribe</div>
+            <div class="exp-desc">Historia y playas de coral en la costa norte colombiana.</div>
+          </div>
+        </div>
+        <div class="exp-card exp-amazonica reveal" style="transition-delay:.2s" onclick="navigateTo('packages')">
+          <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
+            <defs><linearGradient id="amz" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14462a"/><stop offset="100%" stop-color="#0d3020"/></linearGradient></defs>
+            <rect width="560" height="320" fill="url(#amz)"/>
+            <ellipse cx="100" cy="160" rx="80" ry="200" fill="#1e6b3a" opacity=".6"/>
+            <ellipse cx="200" cy="140" rx="70" ry="220" fill="#246040" opacity=".7"/>
+            <ellipse cx="320" cy="150" rx="90" ry="210" fill="#1a5530" opacity=".8"/>
+            <ellipse cx="460" cy="145" rx="80" ry="200" fill="#206035" opacity=".7"/>
+            <polygon points="240,0 280,0 290,320 230,320" fill="rgba(50,180,120,0.25)"/>
+            <rect x="0" y="290" width="560" height="30" rx="0" fill="#0a2415"/>
+          </svg>
+          <div class="exp-card-body">
+            <span class="exp-tag">Amazonía</span>
+            <div class="exp-name">Selva Amazónica</div>
+            <div class="exp-desc">El pulmón del mundo y sabiduría ancestral indígena.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="nosotros">
+    <div class="container">
+      <div class="why-header reveal">
+        <p class="section-label">Nuestro Compromiso</p>
+        <h2 class="why-title">Por qué elegir a los<br><em>curadores de la tierra</em></h2>
+        <p class="why-text">En Raíz Viajera no vendemos tickets, preservamos legados. Entendemos que viajar es un acto de conexión profunda entre el visitante y el territorio.</p>
+      </div>
+      <div class="why-features reveal" style="transition-delay:.1s">
+        <div class="why-card"><div class="why-icon">🗺️</div><div class="why-card-title">Curaduría Experta</div><div class="why-card-text">Cada ruta es diseñada por locales que conocen el territorio de adentro hacia afuera.</div></div>
+        <div class="why-card"><div class="why-icon">🌱</div><div class="why-card-title">Sin Huella</div><div class="why-card-text">Compensamos el 100% del carbono de tu travesía con proyectos locales.</div></div>
+        <div class="why-card"><div class="why-icon">🤝</div><div class="why-card-title">Impacto Positivo</div><div class="why-card-text">El 15% de tu viaje apoya la preservación patrimonial de las comunidades.</div></div>
+        <div class="why-card"><div class="why-icon">✅</div><div class="why-card-title">Calidad Raíz</div><div class="why-card-text">Alojamientos boutique que cumplen con sello de autenticidad Raíz Viajera.</div></div>
+      </div>
+      <div class="why-divider reveal" style="transition-delay:.2s">
+        <div class="why-check-item"><span class="check-icon">✓</span>Grupos reducidos (máximo 8 personas)</div>
+        <div class="why-check-item"><span class="check-icon">✓</span>Acceso a talleres de artesanos locales</div>
+        <div class="why-check-item"><span class="check-icon">✓</span>Seguro integral de aventura y cultura</div>
+        <div class="why-check-item"><span class="check-icon">✓</span>Guías bilingües certificados</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonios">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Voces de viajeros</p>
+        <h2 class="section-title">Historias de Regreso</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Nunca imaginé que un viaje al Amazonas transformaría mi forma de ver el mundo. Raíz Viajera me mostró la verdadera conexión."</p><div class="testi-author"><div class="testi-avatar">MV</div><div><div class="testi-name">Mariana V.</div><div class="testi-role">Arquitecta, Bogotá</div></div></div></div>
+        <div class="testi-card reveal" style="transition-delay:.1s"><div class="testi-stars">★★★★★</div><p class="testi-quote">"La ruta del café no fue solo probar granos, fue conocer a la familia Ramírez y entender el sudor tras cada taza. Una experiencia humana incomparable."</p><div class="testi-author"><div class="testi-avatar">CD</div><div><div class="testi-name">Carlos D.</div><div class="testi-role">Fotógrafo, Medellín</div></div></div></div>
+        <div class="testi-card reveal" style="transition-delay:.2s"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Cartagena tiene mil caras, pero con Raíz conocí la que no sale en las postales: la de su gente valiente en Getsemaní."</p><div class="testi-author"><div class="testi-avatar">EG</div><div><div class="testi-name">Elena G.</div><div class="testi-role">Directora, Cali</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="cta-label">Próximas expediciones</div>
+        <h2 class="cta-title">¿Listo para volver<br>a tu origen?</h2>
+        <p class="cta-sub">Únete a nuestra próxima expedición cultural y redefine lo que significa viajar.</p>
+        <div class="cta-actions">
+          <button class="btn btn-white" onclick="navigateTo('quote')">Planear Mi Viaje</button>
+          <button class="btn btn-outline-white" onclick="navigateTo('packages')">Descargar Catálogo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+        <ul class="footer-nav">
+          <li><a onclick="navigateTo('home')">Inicio</a></li>
+          <li><a onclick="navigateTo('packages')">Experiencias</a></li>
+          <li><a onclick="navigateTo('packages')">Paquetes</a></li>
+          <li><a onclick="navigateTo('quote')">Cotizar</a></li>
+          <li><a onclick="navigateTo('contact')">Contacto</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">𝕏</a>
+          <a href="#" class="social-btn">in</a>
+          <a href="#" class="social-btn">📷</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Raíz Viajera — Cultivando puentes, preservando heritage.</span>
+        <span>Política de privacidad · Turismo sostenible</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+
+
+<script>
+// ── Navigation ─────────────────────────────────────────────
+const pages = ['home','packages','quote','contact'];
+const navMap = {home:'home',packages:'packages',quote:'quote',contact:'contact'};
+
+function navigateTo(page) {
+  pages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.classList.remove('active');
+  });
+  const target = document.getElementById('page-' + page);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+    initReveals();
+    updateNav(page);
+    // Close mobile menu
+    document.getElementById('navbar').classList.remove('open');
+  }
+}
+
+function updateNav(activePage) {
+  document.querySelectorAll('.navbar-links a').forEach(a => a.classList.remove('active'));
+  const map = {home:'nav-home',packages:'nav-packages',quote:'nav-quote',contact:'nav-contact'};
+  if (map[activePage]) {
+    const el = document.getElementById(map[activePage]);
+    if (el) el.classList.add('active');
+  }
+}
+
+// ── Navbar scroll ────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.style.boxShadow = window.scrollY > 60
+    ? '0 16px 48px rgba(31,27,20,.12)'
+    : '0 12px 40px rgba(31,27,20,.07)';
+});
+
+function toggleNav() { navbar.classList.toggle('open'); }
+
+// ── Scroll reveal ────────────────────────────────────────
+function initReveals() {
+  setTimeout(() => {
+    const reveals = document.querySelectorAll('.page.active .reveal:not(.visible)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const siblings = [...entry.target.parentElement.querySelectorAll('.reveal:not(.visible)')];
+          const idx = siblings.indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, idx * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+    reveals.forEach(el => observer.observe(el));
+  }, 50);
+}
+initReveals();
+
+// ── Package filter ────────────────────────────────────────
+function filterPkgs(btn, region) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pkg-card').forEach(card => {
+    if (region === 'all' || card.dataset.region === region) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ── Quote calculator ──────────────────────────────────────
+let currentLevel = 'essential';
+
+function setLevel(level) {
+  currentLevel = level;
+  document.getElementById('lvl-essential').classList.toggle('active', level === 'essential');
+  document.getElementById('lvl-immersive').classList.toggle('active', level === 'immersive');
+  calcQuote();
+}
+
+function adjCount(delta) {
+  const inp = document.getElementById('q-travelers');
+  let val = parseInt(inp.value) + delta;
+  val = Math.max(1, Math.min(20, val));
+  inp.value = val;
+  document.getElementById('q-count-display').textContent = val;
+  calcQuote();
+}
+
+function calcQuote() {
+  const dailyBase = parseInt(document.getElementById('q-territory').value);
+  const days = Math.max(1, parseInt(document.getElementById('q-days').value) || 1);
+  const travelers = parseInt(document.getElementById('q-travelers').value);
+  const levelMult = currentLevel === 'immersive' ? 1.35 : 1.0;
+  const heritageBase = 45000;
+
+  // Group discount
+  let discountPct = 0;
+  if (travelers >= 5) discountPct = 15;
+  else if (travelers >= 3) discountPct = 10;
+
+  const rawDaily = dailyBase * levelMult;
+  const discountedDaily = rawDaily * (1 - discountPct / 100);
+  const total = (discountedDaily * days) + heritageBase;
+
+  const fmt = n => '$' + Math.round(n).toLocaleString('es-CO');
+
+  document.getElementById('r-daily').textContent = fmt(rawDaily);
+  document.getElementById('r-discount').textContent = discountPct > 0 ? '−' + discountPct + '%' : 'Sin descuento';
+  document.getElementById('r-level').textContent = currentLevel === 'immersive' ? 'Inmersivo (+35%)' : 'Esencial';
+  document.getElementById('r-heritage').textContent = fmt(heritageBase);
+  document.getElementById('r-total').textContent = fmt(total);
+}
+
+// Init quote
+calcQuote();
+
+// ── Contact form ──────────────────────────────────────────
+function submitContact() {
+  const success = document.getElementById('contact-success');
+  success.style.display = 'block';
+  setTimeout(() => { success.style.display = 'none'; }, 5000);
+}
+</script>
+</body>
+</html>
