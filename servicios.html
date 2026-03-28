@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Raíz Viajera — Donde cada viaje tiene origen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-brand" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+  <ul class="navbar-links">
+    <li><a onclick="navigateTo('home')" id="nav-home" class="active">Inicio</a></li>
+    <li><a onclick="navigateTo('experiences')" href="servicios.html">servicios</a></li>
+    <li><a onclick="navigateTo('packages')" id="nav-packages" href="servicios.html">Paquetes</a></li>
+    <li><a onclick="navigateTo('cotizacion')" id="nav-quote" href="cotizacion.html">Cotizar</a></li>
+    <li><a onclick="navigateTo('contact')" id="nav-contact">Contacto</a></li>
+  </ul>
+  <div class="navbar-cta">
+    <button href="cotizacion.html" class="btn btn-primary" onclick="navigateTo('quote')">Empezar Travesía</button>
+  </div>
+  <div class="burger" id="burger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="page" id="page-packages">
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-text">
+          <div class="hero-badge">Paquetes Curados</div>
+          <h1 class="page-hero-headline">Curated<br><em>Heritage</em><br>Journeys</h1>
+          <p class="page-hero-sub">Explora los territorios de Colombia a través de nuestros paquetes cuidadosamente seleccionados. Cada viaje preserva la cultura local y cultiva conexiones profundas con la tierra.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="navigateTo('quote')">Reservar Mi Viaje</button>
+            <button class="btn btn-ghost">Ver Mapa</button>
+          </div>
+        </div>
+        <div class="page-hero-img">
+          <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs>
+              <linearGradient id="pkgsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87a96b"/><stop offset="100%" stop-color="#c8a96a"/></linearGradient>
+            </defs>
+            <rect width="500" height="440" fill="url(#pkgsky)"/>
+            <ellipse cx="250" cy="300" rx="400" ry="180" fill="#3d5830" opacity=".8"/>
+            <ellipse cx="80" cy="320" rx="200" ry="120" fill="#2d4520" opacity=".9"/>
+            <ellipse cx="420" cy="330" rx="180" ry="110" fill="#2d4520" opacity=".8"/>
+            <rect x="0" y="360" width="500" height="80" fill="#1e3012"/>
+            <g opacity=".9">
+              <rect x="80" y="320" width="340" height="8" rx="4" fill="#365229"/>
+              <rect x="60" y="338" width="380" height="10" rx="5" fill="#3d5d2f"/>
+              <rect x="40" y="358" width="420" height="12" rx="6" fill="#456630"/>
+              <rect x="20" y="380" width="460" height="14" rx="7" fill="#4d6f33"/>
+              <rect x="0" y="404" width="500" height="36" rx="0" fill="#557838"/>
+            </g>
+            <polygon points="220,220 280,220 296,440 204,440" fill="rgba(200,170,80,0.7)"/>
+            <circle cx="250" cy="70" r="45" fill="rgba(255,240,180,0.2)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages-section">
+    <div class="container">
+      <div class="filter-bar reveal">
+        <span class="filter-label">Filtrar por Territorio</span>
+        <button class="filter-btn active" onclick="filterPkgs(this,'all')">Todas las regiones</button>
+        <button class="filter-btn" onclick="filterPkgs(this,'andino')">Andino</button>
+        <button class="filter-btn" onclick="filterPkgs(this,'caribe')">Caribe</button>
+        <button class="filter-btn" onclick="filterPkgs(this,'amazonico')">Amazónico</button>
+        <button class="filter-btn" onclick="filterPkgs(this,'pacifico')">Pacífico</button>
+      </div>
+
+      <div class="packages-grid" id="pkgs-grid">
+        <!-- Cafetero Heritage -->
+        <div class="pkg-card reveal" data-region="andino">
+          <div class="pkg-img" style="background:linear-gradient(135deg,#3d2510,#6b4226);">
+            <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <rect width="500" height="220" fill="#4a2d15"/>
+              <ellipse cx="250" cy="160" rx="350" ry="130" fill="#2d4520" opacity=".8"/>
+              <ellipse cx="80" cy="180" rx="180" ry="90" fill="#1e3012" opacity=".9"/>
+              <ellipse cx="420" cy="185" rx="160" ry="80" fill="#1e3012" opacity=".8"/>
+              <g opacity=".85"><rect x="60" y="160" width="380" height="7" rx="3" fill="#2d4520"/><rect x="40" y="175" width="420" height="9" rx="4" fill="#365229"/><rect x="20" y="192" width="460" height="10" rx="5" fill="#3d5d2f"/><rect x="0" y="210" width="500" height="10" rx="0" fill="#456630"/></g>
+              <circle cx="380" cy="60" r="35" fill="rgba(255,200,80,0.2)"/>
+            </svg>
+            <span class="pkg-region-badge">Eje Cafetero</span>
+            <span class="pkg-price-badge">$850</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-name">Cafetero Heritage</div>
+            <div class="pkg-desc">Sumérgete en el corazón de la cultura cafetera de Colombia. Desde la semilla hasta la taza, vive las tradiciones artesanales de las tierras del Quindío.</div>
+            <div class="pkg-meta">
+              <div class="pkg-meta-item"><span>📅</span> 5 Días</div>
+              <div class="pkg-meta-item"><span>👥</span> Hasta 6 personas</div>
+            </div>
+            <button class="pkg-cta" onclick="navigateTo('quote')">Explorar Paquete</button>
+          </div>
+        </div>
+
+        <!-- Caribe Colonial -->
+        <div class="pkg-card reveal" style="transition-delay:.1s" data-region="caribe">
+          <div class="pkg-img" style="background:linear-gradient(135deg,#0d3d5c,#1a6e8a);">
+            <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <defs><linearGradient id="carsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d4a6b"/><stop offset="100%" stop-color="#1a6e8a"/></linearGradient></defs>
+              <rect width="500" height="220" fill="url(#carsea)"/>
+              <ellipse cx="180" cy="155" rx="160" ry="50" fill="#c49050" opacity=".9"/>
+              <ellipse cx="370" cy="165" rx="130" ry="40" fill="#b08040" opacity=".8"/>
+              <rect x="0" y="170" width="500" height="50" fill="#0a2d40"/>
+              <circle cx="250" cy="65" r="40" fill="rgba(255,220,100,0.25)"/>
+              <circle cx="250" cy="65" r="22" fill="rgba(255,220,80,0.3)"/>
+            </svg>
+            <span class="pkg-region-badge">Caribe</span>
+            <span class="pkg-price-badge">$1,200</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-name">Caribe Colonial</div>
+            <div class="pkg-desc">Descubre la historia bañada por el sol de Cartagena y las playas prístinas de Tayrona. Un viaje por el legado afrocaribeño.</div>
+            <div class="pkg-meta">
+              <div class="pkg-meta-item"><span>📅</span> 7 Días</div>
+              <div class="pkg-meta-item"><span>🏖️</span> Coastal Experience</div>
+            </div>
+            <button class="pkg-cta" onclick="navigateTo('quote')">Explorar Paquete</button>
+          </div>
+        </div>
+
+        <!-- Andino Summit -->
+        <div class="pkg-card reveal" style="transition-delay:.15s" data-region="andino">
+          <div class="pkg-img" style="background:linear-gradient(135deg,#1a2d1a,#3d5830);">
+            <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <rect width="500" height="220" fill="#1a2d1a"/>
+              <polygon points="0,180 90,60 170,130 250,20 330,110 410,50 500,140 500,220 0,220" fill="#243d1a" opacity=".9"/>
+              <polygon points="0,200 70,140 130,185 210,80 290,150 370,75 450,130 500,170 500,220 0,220" fill="#1a2e12" opacity=".8"/>
+              <circle cx="250" cy="22" r="18" fill="rgba(220,235,255,0.3)"/>
+            </svg>
+            <span class="pkg-region-badge">Andes</span>
+            <span class="pkg-price-badge">$980</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-name">Andino Summit</div>
+            <div class="pkg-desc">Asciende a los místicos ecosistemas de páramo. Experimenta la cultura indígena de alta montaña y cumbres de impresionante belleza.</div>
+            <div class="pkg-meta">
+              <div class="pkg-meta-item"><span>📅</span> 6 Días</div>
+              <div class="pkg-meta-item"><span>🏔️</span> Nivel: Medio</div>
+            </div>
+            <button class="pkg-cta" onclick="navigateTo('quote')">Explorar Paquete</button>
+          </div>
+        </div>
+
+        <!-- Amazónico Deep -->
+        <div class="pkg-card reveal" style="transition-delay:.2s" data-region="amazonico">
+          <div class="pkg-img" style="background:linear-gradient(135deg,#14462a,#0d3020);">
+            <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <rect width="500" height="220" fill="#14462a"/>
+              <ellipse cx="80" cy="110" rx="70" ry="180" fill="#1e6b3a" opacity=".6"/>
+              <ellipse cx="180" cy="100" rx="60" ry="190" fill="#246040" opacity=".7"/>
+              <ellipse cx="300" cy="105" rx="80" ry="185" fill="#1a5530" opacity=".8"/>
+              <ellipse cx="430" cy="100" rx="70" ry="180" fill="#206035" opacity=".7"/>
+              <polygon points="230,0 260,0 266,220 224,220" fill="rgba(50,180,120,0.2)"/>
+            </svg>
+            <span class="pkg-region-badge">Amazonas</span>
+            <span class="pkg-price-badge">$1,450</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-name">Amazónico Deep</div>
+            <div class="pkg-desc">Adéntrate en el pulmón del mundo. Aprende secretos botánicos ancestrales y conecta con las comunidades Tikuna del Gran Río.</div>
+            <div class="pkg-meta">
+              <div class="pkg-meta-item"><span>📅</span> 8 Días</div>
+              <div class="pkg-meta-item"><span>🌿</span> Inmersión Indígena</div>
+            </div>
+            <button class="pkg-cta" onclick="navigateTo('quote')">Explorar Paquete</button>
+          </div>
+        </div>
+
+        <!-- Pacífico Bío -->
+        <div class="pkg-card reveal" style="transition-delay:.25s" data-region="pacifico">
+          <div class="pkg-img" style="background:linear-gradient(135deg,#1a3040,#2a5060);">
+            <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <defs><linearGradient id="pac" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3040"/><stop offset="100%" stop-color="#2a5060"/></linearGradient></defs>
+              <rect width="500" height="220" fill="url(#pac)"/>
+              <ellipse cx="250" cy="190" rx="350" ry="90" fill="#1a5048" opacity=".8"/>
+              <ellipse cx="100" cy="170" rx="150" ry="70" fill="#14403a" opacity=".9"/>
+              <rect x="0" y="180" width="500" height="40" fill="#0d2e28"/>
+              <circle cx="380" cy="55" r="28" fill="rgba(180,230,255,0.2)"/>
+            </svg>
+            <span class="pkg-region-badge">Pacífico</span>
+            <span class="pkg-price-badge">$1,100</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-name">Pacífico Biodiverso</div>
+            <div class="pkg-desc">Una de las regiones más biodiversas del planeta. Avistamiento de ballenas jorobadas, ríos negros y comunidades afropacíficas.</div>
+            <div class="pkg-meta">
+              <div class="pkg-meta-item"><span>📅</span> 7 Días</div>
+              <div class="pkg-meta-item"><span>🐋</span> Avistamiento</div>
+            </div>
+            <button class="pkg-cta" onclick="navigateTo('quote')">Explorar Paquete</button>
+          </div>
+        </div>
+
+        <!-- Llanos Orientales -->
+        <div class="pkg-card reveal" style="transition-delay:.3s" data-region="andino">
+          <div class="pkg-img" style="background:linear-gradient(135deg,#3d3010,#6b5a20);">
+            <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">
+              <defs><linearGradient id="lla" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8a9a4a"/><stop offset="100%" stop-color="#c4b060"/></linearGradient></defs>
+              <rect width="500" height="220" fill="url(#lla)"/>
+              <ellipse cx="250" cy="200" rx="400" ry="60" fill="#6b8030" opacity=".5"/>
+              <rect x="0" y="160" width="500" height="60" fill="#3d5a10" opacity=".9"/>
+              <rect x="0" y="185" width="500" height="35" fill="#2d4510"/>
+              <circle cx="250" cy="60" r="40" fill="rgba(255,240,160,0.2)"/>
+              <circle cx="250" cy="60" r="20" fill="rgba(255,240,140,0.25)"/>
+            </svg>
+            <span class="pkg-region-badge">Llanos</span>
+            <span class="pkg-price-badge">$790</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-name">Llanos Salvajes</div>
+            <div class="pkg-desc">Los Llanos Orientales en su máxima expresión. Llaneros, capibaras, caimanes y horizontes infinitos bajo un cielo sin límites.</div>
+            <div class="pkg-meta">
+              <div class="pkg-meta-item"><span>📅</span> 4 Días</div>
+              <div class="pkg-meta-item"><span>🐊</span> Fauna Silvestre</div>
+            </div>
+            <button class="pkg-cta" onclick="navigateTo('quote')">Explorar Paquete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- No find CTA -->
+      <div class="no-find-cta reveal">
+        <h2>¿No encontraste lo que buscas?</h2>
+        <p>Nos especializamos en itinerarios a medida. Diseñamos un viaje único adaptado a tus intereses culturales y estilo de viaje.</p>
+        <button class="btn btn-white" onclick="navigateTo('contact')">Solicitar Cotización Personalizada</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo" onclick="navigateTo('home')">Raíz<span>·</span>Viajera</div>
+        <ul class="footer-nav">
+          <li><a onclick="navigateTo('home')">Inicio</a></li>
+          <li><a onclick="navigateTo('packages')">Paquetes</a></li>
+          <li><a onclick="navigateTo('quote')">Cotizar</a></li>
+          <li><a onclick="navigateTo('contact')">Contacto</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">𝕏</a>
+          <a href="#" class="social-btn">in</a>
+          <a href="#" class="social-btn">📷</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Raíz Viajera — Cultivando puentes, preservando heritage.</span>
+        <span>Turismo sostenible · FAQ</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
